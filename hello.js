@@ -19,8 +19,6 @@ console.log(x, " ", y);
 console.log(x, " ", y);
         x -= 1;
     }
-  }
-  
   return (x === 0 && y === 0 && walk.length === 10);  
 }
 
