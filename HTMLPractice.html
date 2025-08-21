@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS</title>
+
+    <style>
+        p {
+            /* background-color: lightcoral; */
+            max-width: 200px;
+        }
+        i{
+            color: aqua;
+        }
+        .c2 {
+            background-color: lightpink;
+            color: rgb(20, 0, 151);
+            padding: 10px;
+            width:fit-content;
+        }
+
+        body {
+            /* background-color: cyan; */
+            /* background-image: url('https://as2.ftcdn.net/jpg/07/23/14/93/1000_F_723149335_tA0Fo8zefrHzYlSgXRMYHmBQk7CuWrRd.jpg'); */
+            /* background-image: url('https://as2.ftcdn.net/v2/jpg/07/44/72/17/1000_F_744721797_zR1Dg9mEISt0AEmtVWwefkGmnpnPvFPA.jpg '); */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #subtitleBox {
+            background-color: rgba(0, 0, 0  , 0.5); 
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center"><strong><em><u>नवीन यादव</u></em></strong></h1>
+    <h2>Helllo World!!</h2>
+    <h3>H3 Tag</h3>
+    <h4>H4 Tag</h4>
+    <h5>H5 Tag</h5>
+    <h6>H6 Tag</h6>
+
+
+    <div class="form1">
+        <form action="get" class="form1">
+            <select name="name" id="name">
+                <optgroup disabled>
+                    <option value="0" disabled  selected>Select</option>
+                    <option value="1">Nav</option>
+                    <option value="2">Yad</option>
+                </optgroup>
+                <optgroup>
+                    <option value="0" disabled  selected>Select</option>
+                    <option value="1">Nav</option>
+                    <option value="2">Yad</option>
+                </optgroup>
+            </select>
+
+            <fieldset>
+                <legend>Details</legend>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+                <label for="rollno">Rollno</label>
+                <input type="number" name="rollno" id="rollno">
+
+                <label for="favcolor">Color</label>
+                <input type="color" name="color" id="color">
+
+                <label for="metre">Meter</label>
+                <meter value="0.5"></meter>
+                
+                <label for="output">Output: </label>
+                <output>hajkdh</output>
+                 <!-- hajkdh -->
+            </fieldset>
+        </form>
+
+
+        
+    </div>
+
+    <audio id="myAudio" controls autoplay>
+        <source src="WeAreGoingOnBullrun-VEED.mp3">
+        <track id="subtitleTrack" src="WeAreGoingOnBullrun.mp4.vtt" kind="subtitles" srclang="en" label="English" default>
+    </audio>
+    <div id="subtitleBox" style="width: fit-content; margin-top:1px; font-size:18px; font-weight:bold; color:black; height: 20px; display: flex;">
+        <!-- subtitles will show here -->
+    </div>
+
+    <!-- <video width="320" height="240" controls>
+        <source src="/WeAreGoingOnBullrun.mp4">
+        <track src="/WeAreGoingOnBullrun.mp4.vtt" kind="subtitles" srclang="en" label="English">
+    </video> -->
+    <p>
+        P Tag <br>
+        <i>Italic</i> <br>
+        <b>Bold</b> <br>
+        <em>Emphasize</em> <br>
+        <strong>Strong</strong>
+    </p>
+    <!-- <cite>kajhskjdh</cite> -->
+    <code>print("Hello World")</code> <br>
+    <del>HTML</del>
+    <dfn>HTML</dfn>
+    <abbr title="Hyper Text Markup Language">HTML</abbr>
+    <address>Samarpan PG, Sector 25, GIDC</address>
+
+    <ins>HSH</ins>
+    <kbd>hadskjhks</kbd>
+    <pre>hsajdhk</pre>
+    <progress value="0.05"></progress>
+    <p> 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Naveen Harum molestiae minus facilis, a ab quas neque quisquam id non itaque <blockquote>ABCDEF</blockquote> debitis expedita eveniet commodi sunt? Unde aperiam expedita quae enim ad, accusamus eveniet sapiente obcaecati! ₹ ↹ 
+    </p>
+
+    <div class="c1" id="d1">
+        <span class="c2">Hi</span>
+        <span class="c2">Hello</span>
+    </div>
+
+
+    <script>
+            const audio = document.getElementById("myAudio");
+            const track = audio.textTracks[0]; // first <track>
+            const subtitleBox = document.getElementById("subtitleBox");
+            track.mode = "hidden"; // ensure cues are loaded but not auto-shown
+            track.oncuechange = () => {
+                const cue = track.activeCues[0]; // current subtitle cue
+                subtitleBox.textContent = cue ? cue.text : "";
+            };
+    </script>
+
+
+</body>
+</html>
